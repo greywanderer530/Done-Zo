@@ -75,7 +75,11 @@ export class MemStorage implements IStorage {
 
   async createProject(insertProject: InsertProject): Promise<Project> {
     const id = this.currentProjectId++;
-    const project: Project = { ...insertProject, id };
+    const project: Project = { 
+      ...insertProject, 
+      id,
+      description: insertProject.description ?? null
+    };
     this.projects.set(id, project);
     return project;
   }
@@ -119,7 +123,13 @@ export class MemStorage implements IStorage {
 
   async createTask(insertTask: InsertTask): Promise<Task> {
     const id = this.currentTaskId++;
-    const task: Task = { ...insertTask, id };
+    const task: Task = { 
+      ...insertTask, 
+      id,
+      description: insertTask.description ?? null,
+      deadline: insertTask.deadline ?? null,
+      time: insertTask.time ?? null
+    };
     this.tasks.set(id, task);
     return task;
   }
