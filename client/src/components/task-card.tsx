@@ -25,6 +25,7 @@ export function TaskCard({ task }: TaskCardProps) {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/tasks"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/projects"] });
       if (isEditing) {
         setIsEditing(false);
         toast({
