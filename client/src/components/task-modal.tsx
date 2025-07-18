@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -139,6 +139,9 @@ export function TaskModal({ isOpen, onClose, projectId }: TaskModalProps) {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Add New Task</DialogTitle>
+          <DialogDescription>
+            Add a new task to your project with deadlines, priorities, and detailed descriptions.
+          </DialogDescription>
         </DialogHeader>
 
         {!showDefaultTasks ? (

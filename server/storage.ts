@@ -50,6 +50,122 @@ export class MemStorage implements IStorage {
       password: "123456"
     };
     this.users.set(adminUser.id, adminUser);
+    
+    // Create default project with UI/UX checklist tasks
+    this.createDefaultProject(adminUser.id);
+  }
+
+  private createDefaultProject(userId: number) {
+    const project: Project = {
+      id: this.currentProjectId++,
+      name: "Frontend UI/UX Checklist",
+      description: "Comprehensive checklist for frontend development covering accessibility, responsiveness, performance, and cross-browser testing.",
+      userId
+    };
+    this.projects.set(project.id, project);
+
+    // Add default tasks
+    const defaultTasks = [
+      {
+        name: "Implement semantic HTML structure",
+        description: "Use proper HTML5 semantic elements (header, nav, main, section, article, aside, footer) for better accessibility and SEO.",
+        priority: "high" as const,
+        deadline: "2025-01-20",
+        time: "14:00"
+      },
+      {
+        name: "Add alt text to all images",
+        description: "Ensure all images have descriptive alt attributes. Decorative images should have empty alt attributes.",
+        priority: "high" as const,
+        deadline: "2025-01-18",
+        time: "10:30"
+      },
+      {
+        name: "Implement ARIA labels where needed",
+        description: "Add ARIA labels to interactive elements, form controls, and complex UI components for screen readers.",
+        priority: "medium" as const,
+        deadline: "2025-01-22",
+        time: "16:00"
+      },
+      {
+        name: "Ensure color contrast passes WCAG AA",
+        description: "Test all text and background color combinations to meet 4.5:1 contrast ratio requirement.",
+        priority: "high" as const,
+        deadline: "2025-01-19",
+        time: "11:00"
+      },
+      {
+        name: "Test keyboard navigation",
+        description: "Ensure all interactive elements are accessible via keyboard and tab order is logical.",
+        priority: "medium" as const,
+        deadline: "2025-01-23",
+        time: "15:30"
+      },
+      {
+        name: "Test mobile, tablet, and desktop breakpoints",
+        description: "Verify layout works correctly across all major device sizes and orientations.",
+        priority: "high" as const,
+        deadline: "2025-01-21",
+        time: "09:00"
+      },
+      {
+        name: "Ensure touch targets are ≥48x48px",
+        description: "All buttons, links, and interactive elements should be large enough for touch interaction.",
+        priority: "medium" as const,
+        deadline: "2025-01-24",
+        time: "13:00"
+      },
+      {
+        name: "Implement responsive images",
+        description: "Use responsive image techniques (srcset, sizes, picture element) for optimal loading.",
+        priority: "medium" as const,
+        deadline: "2025-01-25",
+        time: "10:00"
+      },
+      {
+        name: "Implement lazy loading for images",
+        description: "Add loading='lazy' attribute and intersection observer for below-the-fold images.",
+        priority: "medium" as const,
+        deadline: "2025-01-26",
+        time: "14:30"
+      },
+      {
+        name: "Optimize Core Web Vitals",
+        description: "Achieve Lighthouse Performance score >90 by optimizing LCP, FID, and CLS metrics.",
+        priority: "high" as const,
+        deadline: "2025-01-27",
+        time: "11:30"
+      },
+      {
+        name: "Add loading states and feedback",
+        description: "Implement spinners, skeleton screens, and progress indicators for all async operations.",
+        priority: "medium" as const,
+        deadline: "2025-01-29",
+        time: "12:00"
+      },
+      {
+        name: "Test in Chrome, Safari, Firefox",
+        description: "Verify functionality and appearance across major modern browsers.",
+        priority: "medium" as const,
+        deadline: "2025-02-03",
+        time: "14:00"
+      }
+    ];
+
+    defaultTasks.forEach(taskData => {
+      const task: Task = {
+        id: this.currentTaskId++,
+        name: taskData.name,
+        description: taskData.description,
+        deadline: taskData.deadline,
+        time: taskData.time,
+        priority: taskData.priority,
+        completed: false,
+        projectId: project.id,
+        userId
+      };
+      this.tasks.set(task.id, task);
+    });
   }
 
   // Users
