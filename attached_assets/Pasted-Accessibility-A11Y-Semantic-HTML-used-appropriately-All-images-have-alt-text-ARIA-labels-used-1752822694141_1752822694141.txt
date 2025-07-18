@@ -1,0 +1,134 @@
+Accessibility (A11Y)
+ Semantic HTML used appropriately
+
+ All images have alt text
+
+ ARIA labels used where needed
+
+ Color contrast passes WCAG AA (4.5:1)
+
+ Tab navigation is logical and complete
+
+ Skip to main content link available
+
+ Forms have proper labels and fieldset groupings
+
+ Focus outline is visible and consistent
+
+ Dynamic content is screen-reader friendly
+
+ Custom components support keyboard interaction
+
+2️⃣ Responsiveness
+ Mobile, tablet, and desktop breakpoints tested
+
+ Touch targets are large enough (≥ 48x48 px)
+
+ Layout adapts to different screen sizes
+
+ No horizontal scrolling on mobile
+
+ Images are responsive and scaled correctly
+
+ Elements stack properly on small screens
+
+ Test landscape vs portrait orientations
+
+3️⃣ Performance
+ Lazy loading implemented for images/components
+
+ Code-splitting implemented (if applicable)
+
+ Lighthouse Performance score > 90
+
+ Minified JS/CSS in production
+
+ No blocking scripts during page load
+
+ Fonts optimized with font-display: swap
+
+ Image formats optimized (WebP, AVIF)
+
+ Unused CSS/JS removed
+
+ Uses local caching where applicable
+
+4️⃣ Usability & UX
+ Clear visual hierarchy (typography, spacing)
+
+ Consistent UI components and interactions
+
+ Helpful error messages (not just "Something went wrong")
+
+ Buttons and CTAs are descriptive
+
+ Confirmation on destructive actions
+
+ User feedback on loading (spinners, skeletons)
+
+ Forms provide real-time validation
+
+ No dead ends (e.g., 404 pages are branded and helpful)
+
+ Empty states are informative
+
+5️⃣ Branding & Design Consistency
+ Primary colors match brand guidelines
+
+ Typography matches brand font stack
+
+ Logo renders crisply across screen sizes
+
+ Favicon and metadata are set
+
+ App icon and splash screen on mobile (PWA)
+
+ Loading indicators match brand aesthetic
+
+ Component padding/margins follow grid system
+
+6️⃣ Cross-Browser & Device Testing
+ Chrome, Safari, Firefox tested
+
+ Edge and Opera tested
+
+ iOS and Android tested (Chrome/Safari)
+
+ No layout issues across browsers
+
+ No console errors in any browser
+
+7️⃣ Forms & Input Handling
+ All form fields are keyboard accessible
+
+ Use of placeholders vs labels is appropriate
+
+ Success/failure messages are clear
+
+ Input types appropriate (e.g., email, tel)
+
+ Auto-fill support tested
+
+ Password field toggle visibility implemented
+
+8️⃣ Animations & Micro-Interactions
+ Animations enhance, not distract
+
+ Prefer transform over top/left for smooth animations
+
+ Reduced motion support for accessibility
+
+ Hover/focus/active states clearly defined
+
+9️⃣ SEO & Meta
+ Title and meta description set per page
+
+ Open Graph and Twitter meta tags included
+
+ Canonical URLs used
+
+ H1 used once per page
+
+ robots.txt and sitemap.xml configured
+
+ Structured data (JSON-LD) for rich results (if blog/product)

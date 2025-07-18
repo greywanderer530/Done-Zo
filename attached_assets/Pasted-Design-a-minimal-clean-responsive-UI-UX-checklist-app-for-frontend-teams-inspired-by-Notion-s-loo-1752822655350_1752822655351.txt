@@ -1,0 +1,99 @@
+Design a minimal, clean, responsive UI/UX checklist app for frontend teams, inspired by Notion’s look and feel — clean typography, generous whitespace, smooth toggles, rounded corners, and soft shadows.
+
+The app helps developers track design implementation using project-based task boards. Tasks should include detailed deadlines (date + time), priorities, and progress tracking.
+
+Add a theme toggle (light/dark) and persist state using localStorage. Prioritize simplicity, keyboard accessibility, and mobile responsiveness.
+
+⸻
+
+🧱 Tech + UI Framework References
+	•	Frontend: React + Tailwind CSS
+	•	Icons: Feather or Lucide Icons
+	•	Storage: LocalStorage
+	•	Design Reference: Notion (structure), Linear (task flow), Superlist (animations)
+
+⸻
+
+🧩 UI Components & Layout Structure
+
+1. Login Page
+	•	Username + password
+	•	Restrict to max 5 users
+	•	CTA: Log In →
+	•	Background: Minimal, clean, subtle gradient (Notion-like)
+
+⸻
+
+2. App Dashboard (Post-login)
+
+🟫 Sidebar (Left - collapsible)
+	•	Hamburger menu (toggle)
+	•	+ Add Project (modal for new project)
+	•	Project List (vertical)
+	•	Toggle theme: 🌙/☀ switch (dark/light mode)
+	•	FAQs
+	•	Logout
+
+🟩 Main Panel (Right)
+
+Header
+	•	Title: “Today’s Task”
+	•	Button: ✅ Toggle completed tasks (top-right)
+
+Progress Tracker
+	•	Horizontal progress bar
+	•	Updates live with task status
+
+Task List
+
+Each task card includes:
+	•	Checkbox to mark complete
+	•	📝 Task Name (editable inline)
+	•	📅 Deadline with both:
+	•	Date Picker (dd/mm/yyyy or mm/dd/yyyy)
+	•	Time Picker (HH:MM AM/PM format)
+	•	🔥 Priority (Low, Medium, High → use badges)
+	•	🧾 Description (short or expandable)
+
+Floating Action Button (+)
+	•	Opens modal with:
+	•	Task Name (required)
+	•	Deadline Date (calendar picker)
+	•	Deadline Time (12hr format with AM/PM)
+	•	Priority (dropdown)
+	•	Description (multiline textarea)
+
+⸻
+
+🎨 Design & UX Guidelines
+	•	Color Palette:
+	•	Light Mode: White background, muted gray text, soft shadows
+	•	Dark Mode: Deep gray background, white text, neon accents (minimal)
+	•	Typography: Inter or Poppins
+	•	Layout: 2-column, responsive for mobile
+	•	Animations: Subtle slide/fade, especially on modal open, theme toggle
+
+⸻
+
+🔧 Functionality Checklist
+	•	✅ Login page (5 users only)
+	•	✅ Add/Edit/Delete Projects
+	•	✅ Add/Edit/Delete Tasks with:
+	•	Name
+	•	Deadline (Date + Time in 12hr AM/PM)
+	•	Priority
+	•	Description
+	•	✅ Task Progress Tracker
+	•	✅ Dark/Light Theme Toggle (LocalStorage)
+	•	✅ Filter/Sort by:
+	•	Deadline (soonest first)
+	•	Priority
+	•	Completion Status
+
+⸻
+
+🔗 Design Reference Summary
+	•	Notion: Minimalism, layout spacing, font
+	•	Linear: Fast task interaction, clean form flow
+	•	Superlist: Task cards, add animations
+	•	Figma: Rounded input UI, responsive resizing
