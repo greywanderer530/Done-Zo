@@ -38,6 +38,18 @@ export class MemStorage implements IStorage {
     this.currentUserId = 1;
     this.currentProjectId = 1;
     this.currentTaskId = 1;
+    
+    // Initialize with admin user
+    this.initializeDefaultUser();
+  }
+
+  private initializeDefaultUser() {
+    const adminUser: User = {
+      id: this.currentUserId++,
+      username: "admin",
+      password: "123456"
+    };
+    this.users.set(adminUser.id, adminUser);
   }
 
   // Users
@@ -128,7 +140,9 @@ export class MemStorage implements IStorage {
       id,
       description: insertTask.description ?? null,
       deadline: insertTask.deadline ?? null,
-      time: insertTask.time ?? null
+      time: insertTask.time ?? null,
+      priority: insertTask.priority || "medium",
+      completed: insertTask.completed ?? false
     };
     this.tasks.set(id, task);
     return task;
